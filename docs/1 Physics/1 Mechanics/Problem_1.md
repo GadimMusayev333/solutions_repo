@@ -79,3 +79,11 @@ Projectile motion isn’t just academic—it appears in:
   accurately describes the range.
 - Maximum range occurs at $45^\circ$ on flat ground.
 - Real-world conditions (drag, wind, terrain) change the result and require more advanced modeling.
+
+---
+
+![alt text](image.png)
+ 
+ ## colab  
+[problem](https://colab.research.google.com/drive/12r4Xn-vQIT7mlLmU0O2oK2e-jbt_GSrh?usp=sharing)
+
