@@ -19,6 +19,7 @@ $$
 
 **Horizontal Range**:
 
+$$
 \[
 \begin{aligned}
 R &= v_{0x} \cdot T \\
@@ -26,6 +27,7 @@ R &= v_{0x} \cdot T \\
   &= \frac{v_0^2 \sin(2\theta)}{g}
 \end{aligned}
 \]
+$$
 
 This equation shows that the range depends on both the speed and the angle of launch.
 
