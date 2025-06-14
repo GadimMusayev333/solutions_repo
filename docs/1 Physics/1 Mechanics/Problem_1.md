@@ -76,9 +76,9 @@ Projectile motion isn’t just academic—it appears in:
 - The range of a projectile depends on its launch angle and initial speed.
 - Without air resistance, the formula 
 
-  $$
-  R = \frac{v_0^2 \sin(2\theta)}{g}
-  $$
+$$
+R = \frac{v_0^2 \sin(2\theta)}{g}
+$$
 
   accurately describes the range.
 - Maximum range occurs at $45^\circ$ on flat ground.
