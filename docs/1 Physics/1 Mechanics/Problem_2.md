@@ -5,9 +5,11 @@
 
 The motion of a forced damped pendulum is governed by the nonlinear differential equation:
 
+$$
 \[
 \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \frac{g}{L} \sin\theta = A \cos(\omega t)
 \]
+$$
 
 Where:
 
