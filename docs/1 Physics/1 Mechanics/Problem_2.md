@@ -26,15 +26,19 @@ Where:
 
 When $|\theta| < 0.2$ rad (≈ 11°), use $\sin\theta \approx \theta$. The equation simplifies to:
 
+$$
 \[
 \frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)
 \]
+$$
 
 This is a linear second-order ODE with sinusoidal forcing. Its general solution is:
 
+$$
 \[
 \theta(t) = \theta_{\text{homogeneous}}(t) + \theta_{\text{particular}}(t)
 \]
+$$
 
 - $\theta_{\text{homogeneous}}(t)$: decays over time due to damping  
 - $\theta_{\text{particular}}(t)$: oscillates at the driving frequency $\omega$
@@ -45,9 +49,11 @@ This is a linear second-order ODE with sinusoidal forcing. Its general solution 
 
 Occurs when $\omega$ is near the system's natural frequency:
 
+$$
 \[
 \omega_0 = \sqrt{\frac{g}{L}}
 \]
+$$
 
 At resonance, even small forces can produce large amplitude oscillations unless damping is significant.
 
