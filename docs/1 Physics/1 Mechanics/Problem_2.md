@@ -34,11 +34,9 @@ $$
 
 This is a linear second-order ODE with sinusoidal forcing. Its general solution is:
 
-$$
-\[
+$$\[
 \theta(t) = \theta_{\text{homogeneous}}(t) + \theta_{\text{particular}}(t)
-\]
-$$
+\]$$
 
 - $\theta_{\text{homogeneous}}(t)$: decays over time due to damping  
 - $\theta_{\text{particular}}(t)$: oscillates at the driving frequency $\omega$
