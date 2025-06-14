@@ -49,11 +49,11 @@ $$
 
 Occurs when $\omega$ is near the system's natural frequency:
 
-$$
+$
 \[
 \omega_0 = \sqrt{\frac{g}{L}}
 \]
-$$
+$
 
 At resonance, even small forces can produce large amplitude oscillations unless damping is significant.
 
