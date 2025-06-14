@@ -111,3 +111,12 @@ You can vary $b$, $A$, and $\omega$ to explore different dynamical regimes.
 - Double pendulums  
 - Stochastic or noise-driven systems  
 - Discrete-time maps (e.g., kicked rotor)
+
+---
+
+![alt text](image-1.png)
+
+## colab 
+[problem](https://colab.research.google.com/drive/1J5SayOpCpayaqOxBDFi1ajdIQSsLKFTR?usp=sharing)
+
+
