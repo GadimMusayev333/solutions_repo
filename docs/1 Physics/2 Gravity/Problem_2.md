@@ -187,3 +187,13 @@ Understanding these speeds helps engineers:
 - Design rockets with sufficient **thrust** and **fuel efficiency**,
 - Choose optimal **launch windows** and **paths**,
 - Plan **interplanetary** and **deep space missions**.
+
+---
+
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+
+## colab 
+
+[solution](https://colab.research.google.com/drive/1Y8ooW1qSZpVIhneDtzyoEZ23CvHN_rS3?usp=sharing)
