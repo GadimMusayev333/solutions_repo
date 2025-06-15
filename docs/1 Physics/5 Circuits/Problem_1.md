@@ -129,8 +129,8 @@ $$\begin{bmatrix}
 V_1 \\
 V_3
 \end{bmatrix}
-=
-\begin{bmatrix}
+=$$
+$$\begin{bmatrix}
 1 \\
 0
 \end{bmatrix}$$
