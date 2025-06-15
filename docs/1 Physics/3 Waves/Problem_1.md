@@ -68,15 +68,6 @@ This pattern stays **steady in space** (assuming time is fixed), and it **change
 - **Optics**: Similar patterns happen with light in **double-slit experiments**
 - **Acoustics**: Speaker setups in rooms create interference zones
 
----
-
-## ✅ Summary
-
-- **Interference** happens when waves from multiple sources overlap.
-- You placed wave sources at the **corners of a square**.
-- The waves from each source interact across the water surface.
-- The final pattern shows areas where waves **reinforce or cancel** each other.
-- The shape of the pattern depends on the **number and placement of sources**.
 
 
 ---
