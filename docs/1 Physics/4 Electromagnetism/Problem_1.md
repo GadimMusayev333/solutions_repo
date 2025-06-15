@@ -130,7 +130,7 @@ $$
 \begin{bmatrix}
 V_1 \\
 V_3
-\end{bmatrix}
+\end{bmatrix}w
 =
 \begin{bmatrix}
 1 \\
