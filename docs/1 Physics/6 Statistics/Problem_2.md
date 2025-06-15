@@ -97,7 +97,7 @@ For each needle drop:
 - Randomly select the distance $y$ from the center of the needle to the nearest line, uniformly from $0$ to $d/2$.
 - Randomly select the angle $\theta$ that the needle makes with the horizontal, uniformly from $0$ to $\pi/2$.
 - The needle crosses a line if:
-  $$y \leq \frac{l}{2} \sin(\theta) $$
+  $$y\leq \frac{l}{2} \sin(\theta)$$
 
 Count how many times it crosses and use the formula to estimate $\pi$.
 
