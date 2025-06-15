@@ -166,4 +166,4 @@ These variations can be explored by adjusting initial conditions and field stren
 
 ## colab 
 
-[solution](![alt text](image-2.png))
+[solution](https://colab.research.google.com/drive/1Y8ooW1qSZpVIhneDtzyoEZ23CvHN_rS3?usp=sharing)
