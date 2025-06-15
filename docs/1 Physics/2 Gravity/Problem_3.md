@@ -144,3 +144,13 @@ The outcome of a payload release depends sensitively on the initial speed and di
 - **Interplanetary Missions**: Achieving escape velocity to leave Earth  
 
 Understanding these dynamics enables better mission planning, more efficient fuel use, and safer satellite and spacecraft deployment strategies.
+
+
+---
+
+![alt text](image-6.png)
+![alt text](image-7.png)
+
+### colab
+
+[solution](https://colab.research.google.com/drive/1Y8ooW1qSZpVIhneDtzyoEZ23CvHN_rS3?usp=sharing)
