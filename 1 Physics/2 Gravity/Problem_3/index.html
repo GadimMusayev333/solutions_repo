@@ -172,6 +172,108 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<h1 id="problem-3-trajectories-of-a-freely-released-payload-near-earth">Problem 3: Trajectories of a Freely Released Payload Near Earth</h1>
+<p>🎯 <strong>Motivation</strong></p>
+<p>When a payload is released from a moving rocket near Earth, its future path is determined by its initial position and velocity, as well as the influence of Earth’s gravity. Depending on these conditions, the payload may reenter the atmosphere, enter orbit, or escape Earth’s gravitational field entirely. This problem is central to satellite deployment, space station servicing, and interplanetary mission planning.</p>
+<p>To understand and predict these trajectories, we combine Newtonian gravity with numerical simulation. This enables the classification and analysis of different orbital regimes and helps visualize the sensitive dependence on initial conditions.</p>
+<p>🧠 <strong>Theoretical Background</strong></p>
+<p>The motion of the payload is governed by Newton’s Law of Universal Gravitation and Newton’s Second Law of Motion. The gravitational force acting on the payload is:</p>
+<div class="arithmatex">\[
+\vec{F} = -\frac{G M_e m}{r^2} \hat{r}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(G\)</span> is the gravitational constant  </li>
+<li><span class="arithmatex">\(M_e\)</span> is the mass of Earth  </li>
+<li><span class="arithmatex">\(m\)</span> is the mass of the payload  </li>
+<li><span class="arithmatex">\(r\)</span> is the distance from Earth’s center  </li>
+<li><span class="arithmatex">\(\hat{r}\)</span> is the unit vector pointing from the payload to Earth’s center  </li>
+</ul>
+<p>Using Newton’s Second Law, <span class="arithmatex">\(\vec{F} = m \vec{a}\)</span>, we derive the equation of motion:</p>
+<div class="arithmatex">\[
+\ddot{\vec{r}} = -\frac{G M_e}{|\vec{r}|^3} \vec{r}
+\]</div>
+<p>This vector differential equation describes how the position vector <span class="arithmatex">\(\vec{r}\)</span> evolves over time due to Earth’s gravity. The nature of the resulting trajectory depends on the magnitude and direction of the payload’s velocity at release.</p>
+<hr/>
+<h3 id="types-of-trajectories"><strong>Types of Trajectories</strong></h3>
+<p>The form of the trajectory depends on the total mechanical energy (kinetic + potential) of the payload:</p>
+<h4 id="circular-orbit">Circular Orbit</h4>
+<p>Occurs when the payload has just enough velocity to maintain a constant distance from Earth. The required circular velocity is:</p>
+<div class="arithmatex">\[
+v_\text{circular} = \sqrt{\frac{G M_e}{r}}
+\]</div>
+<h4 id="elliptical-orbit">Elliptical Orbit</h4>
+<p>If the velocity is less than escape velocity but not tuned for a circular path, the payload follows an elliptical orbit.</p>
+<h4 id="parabolic-escape-trajectory">Parabolic Escape Trajectory</h4>
+<p>If the payload has exactly the escape velocity:</p>
+<div class="arithmatex">\[
+v_\text{escape} = \sqrt{\frac{2 G M_e}{r}}
+\]</div>
+<p>It follows a parabolic path and asymptotically escapes Earth’s gravity.</p>
+<h4 id="hyperbolic-trajectory">Hyperbolic Trajectory</h4>
+<p>When the velocity exceeds the escape velocity, the payload follows an open, hyperbolic path and escapes with residual speed.</p>
+<h4 id="suborbital-reentry">Suborbital (Reentry)</h4>
+<p>If the payload has insufficient velocity for a stable orbit, it eventually returns to Earth’s surface.</p>
+<hr/>
+<p>🧮 <strong>Numerical Simulation</strong></p>
+<p>Analytically solving the gravitational equations of motion is only feasible for idealized cases. For arbitrary initial conditions and realistic mission scenarios, numerical simulation is required.</p>
+<p>The trajectory of the payload is determined by integrating the second-order differential equation:</p>
+<div class="arithmatex">\[
+\ddot{\vec{r}} = -\frac{G M_e}{|\vec{r}|^3} \vec{r}
+\]</div>
+<p>This is reformulated as a system of first-order differential equations by introducing the velocity vector <span class="arithmatex">\(\vec{v} = \dot{\vec{r}}\)</span>. The numerical solver then steps through small time increments, updating position and velocity based on the local acceleration caused by Earth’s gravity.</p>
+<p><strong>Key parameters for simulation:</strong></p>
+<ul>
+<li><strong>Initial Position</strong>: Defined by the altitude of release above Earth's surface.</li>
+<li><strong>Initial Velocity</strong>: Both magnitude and direction affect the outcome.</li>
+<li><strong>Integration Time</strong>: Determines how far the simulation runs into the future.</li>
+</ul>
+<p>Using a standard ODE integrator, such as Runge-Kutta methods, we simulate the motion and track the trajectory in 2D space. The Earth is modeled as a stationary massive body, and atmospheric drag is neglected for simplicity.</p>
+<hr/>
+<p>🔬 <strong>Example Simulations and Interpretation</strong></p>
+<p>To demonstrate the different types of trajectories, we simulate the release of a payload from 300 km above Earth’s surface, changing only the magnitude of the initial velocity while keeping the direction tangential to the surface.</p>
+<p>Let:</p>
+<div class="arithmatex">\[
+r = R_e + h, \quad \text{where} \quad R_e = \text{Earth’s radius}, \quad h = 300\,\text{km}
+\]</div>
+<p>Then:</p>
+<div class="arithmatex">\[
+v_\text{circular} = \sqrt{\frac{G M_e}{r}}, \quad v_\text{escape} = \sqrt{2} \cdot v_\text{circular}
+\]</div>
+<p>We analyze four distinct cases:</p>
+<hr/>
+<h3 id="1-circular-orbit">1. Circular Orbit</h3>
+<ul>
+<li><strong>Velocity</strong>: Exactly <span class="arithmatex">\(v_\text{circular}\)</span></li>
+<li><strong>Result</strong>: The payload enters a stable circular orbit, maintaining constant altitude.</li>
+</ul>
+<hr/>
+<h3 id="2-suborbital-reentry">2. Suborbital Reentry</h3>
+<ul>
+<li><strong>Velocity</strong>: Less than <span class="arithmatex">\(v_\text{circular}\)</span>, e.g., 70% of it  </li>
+<li><strong>Result</strong>: The payload follows a curved path but lacks the velocity to sustain orbit and eventually reenters Earth’s atmosphere.</li>
+</ul>
+<hr/>
+<h3 id="3-elliptical-orbit">3. Elliptical Orbit</h3>
+<ul>
+<li><strong>Velocity</strong>: Between <span class="arithmatex">\(v_\text{circular}\)</span> and <span class="arithmatex">\(v_\text{escape}\)</span> </li>
+<li><strong>Result</strong>: The payload follows a closed elliptical orbit, reaching different altitudes throughout its motion.</li>
+</ul>
+<hr/>
+<h3 id="4-hyperbolic-escape-trajectory">4. Hyperbolic Escape Trajectory</h3>
+<ul>
+<li><strong>Velocity</strong>: Greater than <span class="arithmatex">\(v_\text{escape}\)</span>, e.g., 110% of it  </li>
+<li><strong>Result</strong>: The payload escapes Earth’s gravity along a hyperbolic path, never to return.</li>
+</ul>
+<hr/>
+<h3 id="interpretation"><strong>Interpretation</strong></h3>
+<p>The outcome of a payload release depends sensitively on the initial speed and direction. A small change can transition a trajectory from bound to unbound. These results are critical in:</p>
+<ul>
+<li><strong>Orbital Insertion</strong>: Achieving precise speed to maintain orbit  </li>
+<li><strong>Reentry Prediction</strong>: Ensuring suborbital payloads return safely  </li>
+<li><strong>Interplanetary Missions</strong>: Achieving escape velocity to leave Earth  </li>
+</ul>
+<p>Understanding these dynamics enables better mission planning, more efficient fuel use, and safer satellite and spacecraft deployment strategies.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
