@@ -177,3 +177,13 @@ g = 9.77 \pm 0.007~\text{m/s}^2
 $$
 
 This is in strong agreement with the theoretical value, validating both the model and the experimental method.
+
+---
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+## colab 
+
+[solution](https://colab.research.google.com/drive/1Y8ooW1qSZpVIhneDtzyoEZ23CvHN_rS3?usp=sharing)
