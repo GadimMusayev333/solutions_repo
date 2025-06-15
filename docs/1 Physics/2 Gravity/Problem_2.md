@@ -31,9 +31,9 @@ v_1 = \sqrt{\frac{GM}{R}}
 **Meaning**: The minimum velocity needed to escape a planet’s gravitational field without further propulsion.
 
 **Formula**:  
-\[
+$$\[
 v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \cdot v_1
-\]
+\]$$
 
 ---
 
