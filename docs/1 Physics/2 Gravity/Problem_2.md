@@ -111,58 +111,58 @@ v_3 = \sqrt{(42{,}100)^2 + (29{,}780)^2} \approx 51{,}600 \, \text{m/s}
 ### 🔴 Mars
 
 - First Cosmic Velocity:  
-\[
+$$\[
 v_1 = \sqrt{\frac{6.67430 \times 10^{-11} \cdot 6.417 \times 10^{23}}{3.390 \times 10^6}} \approx 3{,}556 \, \text{m/s}
-\]
+\]$$
 
 - Second Cosmic Velocity:  
-\[
+$$\[
 v_2 = \sqrt{2} \cdot v_1 \approx 5{,}028 \, \text{m/s}
-\]
+\]$$
 
 - Orbital Velocity:  
-\[
+$$\[
 v_{\text{orb}} \approx 24{,}130 \, \text{m/s}
-\]
+\]$$
 
 - Escape Velocity from Sun:  
-\[
+$$\[
 v_{\text{esc,Sun}} \approx 34{,}100 \, \text{m/s}
-\]
+\]$$
 
 - Third Cosmic Velocity:  
-\[
+$$\[
 v_3 = \sqrt{(34{,}100)^2 + (24{,}130)^2} \approx 41{,}800 \, \text{m/s}
-\]
+\]$$
 
 ---
 
 ### 🟠 Jupiter
 
 - First Cosmic Velocity:  
-\[
+$$\[
 v_1 = \sqrt{\frac{6.67430 \times 10^{-11} \cdot 1.898 \times 10^{27}}{6.991 \times 10^7}} \approx 42{,}100 \, \text{m/s}
-\]
+\]$$
 
 - Second Cosmic Velocity:  
-\[
+$$\[
 v_2 = \sqrt{2} \cdot v_1 \approx 59{,}500 \, \text{m/s}
-\]
+\]$$
 
 - Orbital Velocity:  
-\[
+$$\[
 v_{\text{orb}} \approx 13{,}060 \, \text{m/s}
-\]
+\]$$
 
 - Escape Velocity from Sun:  
-\[
+$$\[
 v_{\text{esc,Sun}} \approx 18{,}460 \, \text{m/s}
-\]
+\]$$
 
 - Third Cosmic Velocity:  
-\[
+$$\[
 v_3 = \sqrt{(18{,}460)^2 + (13{,}060)^2} \approx 22{,}500 \, \text{m/s}
-\]
+\]$$
 
 ---
 
