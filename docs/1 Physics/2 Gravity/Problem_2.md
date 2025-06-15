@@ -21,9 +21,11 @@ These concepts underpin satellite launches, Moon and Mars missions, and future i
 
 **Formula**: 
 $$
+
 \[
 v_1 = \sqrt{\frac{GM}{R}}
 \]
+
 $$
 
 ---
