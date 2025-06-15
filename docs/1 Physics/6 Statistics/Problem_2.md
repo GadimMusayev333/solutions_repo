@@ -19,13 +19,9 @@ This approach:
 Imagine a unit circle (radius = 1) inscribed in a square with sides of length 2 (from $-1$ to $1$ on both $x$ and $y$ axes).
 
 - The area of the circle is:
-  $$
-  A_{\text{circle}} = \pi r^2 = \pi \cdot 1^2 = \pi
-  $$
-- The area of the square is:
-  $$
-  A_{\text{square}} = 2 \cdot 2 = 4
-  $$
+  $$A_{\text{circle}} = \pi r^2 = \pi \cdot 1^2 = \pi$$
+$$- The area of the square is:$$
+  $$A_{\text{square}} = 2 \cdot 2 = 4$$
 
 Now, if we randomly throw points into the square, the probability that a point lands inside the circle is:
 
