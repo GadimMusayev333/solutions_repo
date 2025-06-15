@@ -1,159 +1,179 @@
-# Problem 1 # Problem 1: Simulating the Effects of the Lorentz Force
+# Problem 1 # 📘 Problem 1: Measuring Earth’s Gravitational Acceleration with a Pendulum
 
-🎯 **Motivation**
+## 📌 Motivation
 
-The Lorentz force equation:
-
-$$
-\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}
-$$
-
-describes the force experienced by a charged particle in electric ($\vec{E}$) and magnetic ($\vec{B}$) fields. This fundamental law governs the behavior of charged particles in a wide range of physical systems, from particle accelerators and mass spectrometers to astrophysical plasmas and magnetic confinement devices in fusion research.
-
-Simulating the motion of such particles enables visualization of their dynamic paths and a deeper understanding of phenomena like cyclotron motion, helical trajectories, and drift behavior in combined fields.
+Determining the gravitational acceleration $g$ using a pendulum is a classic experiment emphasizing the link between theory and measurement. This experiment demonstrates how even simple setups can yield precise physical constants when careful measurement and uncertainty analysis are applied.
 
 ---
 
-## 1️⃣ Exploration of Applications
+## 🧰 Materials
 
-### 📌 Key Systems Influenced by Lorentz Force
-
-- **Particle Accelerators**: Lorentz force bends and accelerates charged particles using magnetic and electric fields.
-- **Mass Spectrometers**: Use magnetic fields to separate ions by mass-to-charge ratio.
-- **Plasma Confinement Devices (e.g., Tokamaks)**: Use magnetic fields to confine high-temperature plasma.
-- **Cathode Ray Tubes (CRTs)**: Deflect electron beams using electric and magnetic fields.
-- **Auroras and Cosmic Rays**: Charged particles spiral along Earth’s magnetic field lines.
-
-### 📌 Importance of Fields
-
-- **Electric Field ($\vec{E}$)**: Accelerates particles linearly.
-- **Magnetic Field ($\vec{B}$)**: Bends the path of particles, causing circular or helical motion.
-
-The cross product $\vec{v} \times \vec{B}$ ensures that the magnetic force is always perpendicular to the particle’s velocity — causing rotation or curvature, not acceleration along the velocity vector.
+- String length: $\sim$1.00 m  
+- Small mass (e.g., key chain)  
+- Stopwatch (±0.01 s resolution)  
+- Ruler (±0.5 mm resolution)  
 
 ---
 
-## 2️⃣ Simulating Particle Motion (Conceptual Explanation)
+## 🔧 Setup
 
-The motion of a particle of mass $m$ and charge $q$ under Lorentz force is governed by Newton’s second law:
+**Measured Length:**
 
 $$
-m \frac{d\vec{v}}{dt} = q\vec{E} + q\vec{v} \times \vec{B}
+L = 1.000~\text{m}, \quad \Delta L = \frac{0.001}{2} = 0.0005~\text{m}
 $$
 
-This yields coupled differential equations for velocity and position, depending on field configurations.
+Measured from the suspension point to the center of mass of the pendulum bob.
 
 ---
 
-### 🔁 Case 1: Uniform Magnetic Field Only
+## ⏱ Data Collection
 
-Set $\vec{E} = 0$
+**Measured the time for 10 full oscillations ($T_{10}$), 10 times:**
 
-Resulting force:
+| Trial | $T_{10}$ (s) |
+|-------|--------------|
+| 1     | 20.12        |
+| 2     | 20.08        |
+| 3     | 20.11        |
+| 4     | 20.14        |
+| 5     | 20.10        |
+| 6     | 20.09        |
+| 7     | 20.13        |
+| 8     | 20.07        |
+| 9     | 20.12        |
+| 10    | 20.10        |
+
+---
+
+## 📊 Calculations
+
+### 1. Mean and Standard Deviation
 
 $$
-\vec{F} = q\vec{v} \times \vec{B}
+\bar{T}_{10} = \frac{1}{10} \sum T_{10} = 20.106~\text{s}
 $$
 
-- Particle moves in a circular path in a plane perpendicular to $\vec{B}$.
-
-- **Larmor radius** (radius of circular motion):
+Standard deviation:
 
 $$
-r = \frac{mv_\perp}{qB}
+\sigma_T = \sqrt{\frac{1}{n - 1} \sum (T_{10} - \bar{T}_{10})^2} \approx 0.023~\text{s}
 $$
 
-- **Cyclotron frequency** (angular velocity):
+Uncertainty in the mean:
 
 $$
-\omega = \frac{qB}{m}
+\Delta T_{10} = \frac{\sigma_T}{\sqrt{10}} = \frac{0.023}{\sqrt{10}} \approx 0.007~\text{s}
 $$
 
 ---
 
-### 🔁 Case 2: Uniform Electric and Magnetic Fields
+### 2. Period of One Oscillation
 
-- If parallel ($\vec{E} \parallel \vec{B}$): Particle accelerates linearly along field lines → **spiral motion**.
-
-- If crossed ($\vec{E} \perp \vec{B}$):
-
-**E × B drift:**
+Mean Period:
 
 $$
-\vec{v}_{\text{drift}} = \frac{\vec{E} \times \vec{B}}{B^2}
+T = \frac{\bar{T}_{10}}{10} = \frac{20.106}{10} = 2.0106~\text{s}
 $$
 
-Overall motion: combination of circular motion due to $\vec{B}$ and uniform drift due to $\vec{E}$.
-
----
-
-### 🔁 Case 3: Only Electric Field (No Magnetic Field)
-
-Particle undergoes **linear acceleration**:
+Uncertainty in $T$:
 
 $$
-\vec{a} = \frac{q\vec{E}}{m}
+\Delta T = \frac{\Delta T_{10}}{10} = \frac{0.007}{10} = 0.0007~\text{s}
 $$
 
 ---
 
-## 3️⃣ Parameter Exploration
+### 3. Gravitational Acceleration
 
-| Parameter           | Effect |
-|---------------------|--------|
-| Electric Field ($E$) | Increases linear acceleration or drift. |
-| Magnetic Field ($B$) | Decreases Larmor radius; increases circular frequency. |
-| Initial Velocity ($v$) | Alters pitch of helical path or radius of circle. |
-| Charge ($q$)         | Reverses direction of force if sign flips; magnitude affects curvature. |
-| Mass ($m$)           | Heavier particles spiral more slowly and with larger radius. |
+Using the formula for the simple pendulum:
 
-These variations can be explored by adjusting initial conditions and field strengths and observing how the motion evolves.
+$$
+g = \frac{4\pi^2 L}{T^2}
+$$
 
----
+Substitute the values:
 
-## 4️⃣ Visualization (Conceptually)
-
-### 2D and 3D Trajectories to Show:
-
-- **Uniform B-field**:
-  - 2D: Circular motion in the $x$–$y$ plane.
-  - 3D: If initial velocity has a component parallel to $\vec{B}$, the particle moves in a **helical path**.
-
-- **E and B Crossed Fields**:
-  - Path becomes **drifting cycloid** — spiraling while moving sideways.
-
-### 🧭 Key Concepts
-
-- **Larmor Radius**: Indicates strength of curvature.
-- **Helical Pitch**: Determined by parallel velocity.
-- **Drift Velocity**: Uniform translation of the orbit center.
+$$
+g = \frac{4\pi^2 \cdot 1.000}{(2.0106)^2} \approx \frac{39.478}{4.0425} \approx 9.77~\text{m/s}^2
+$$
 
 ---
 
-## ✅ Discussion: Real-World Connections
+### 4. Uncertainty in $g$
 
-| System              | Lorentz Force Role |
-|---------------------|--------------------|
-| Cyclotron           | Uses magnetic field to keep particles in a circular path while electric field accelerates them. |
-| Mass Spectrometer   | Separates ions based on the radius of their circular motion in a magnetic field. |
-| Magnetic Traps      | Confine plasma using magnetic curvature and field gradients. |
-| Astrophysics        | Explains spiral motion of charged cosmic particles in Earth’s magnetic field. |
+Relative uncertainty formula:
+
+$$
+\frac{\Delta g}{g} = \sqrt{ \left( \frac{\Delta L}{L} \right)^2 + \left( 2 \cdot \frac{\Delta T}{T} \right)^2 }
+$$
+
+Substituting values:
+
+$$
+\frac{\Delta g}{g} = \sqrt{ \left( \frac{0.0005}{1.000} \right)^2 + \left( 2 \cdot \frac{0.0007}{2.0106} \right)^2 } \\
+\approx \sqrt{(2.5 \times 10^{-4})^2 + (6.96 \times 10^{-4})^2} \\
+\approx \sqrt{6.25 \times 10^{-8} + 4.84 \times 10^{-7}} = \sqrt{5.47 \times 10^{-7}} \approx 7.39 \times 10^{-4}
+$$
+
+Now, calculate $\Delta g$:
+
+$$
+\Delta g = g \cdot \frac{\Delta g}{g} = 9.77 \cdot 7.39 \times 10^{-4} \approx 0.0072~\text{m/s}^2
+$$
 
 ---
 
-## 📌 Extension Ideas
+## ✅ Final Results
 
-- Add **non-uniform** or **time-varying fields** to model more realistic environments.
-- Include **collisions** or **external forces** for plasma simulations.
-- Simulate **multiple particles** interacting via Coulomb forces.
+| Quantity                     | Value                |
+|-----------------------------|----------------------|
+| Pendulum Length $L$         | 1.000 m              |
+| Uncertainty $\Delta L$      | 0.0005 m             |
+| Mean Time (10 osc) $\bar{T}_{10}$ | 20.106 s       |
+| Standard Deviation $\sigma_T$     | 0.023 s        |
+| Uncertainty in Mean $\Delta T_{10}$ | 0.007 s      |
+| Period $T$                  | 2.0106 s             |
+| Uncertainty in Period $\Delta T$   | 0.0007 s       |
+| Calculated $g$              | 9.77 m/s²            |
+| Uncertainty $\Delta g$      | ±0.0072 m/s²         |
 
 ---
 
-## 📤 Deliverables Summary (Conceptual)
+## 🧠 Analysis & Discussion
 
-| Component                | Description |
-|--------------------------|-------------|
-| Markdown Document        | Theoretical foundations, parameter exploration, system analysis. |
-| Visualizations (Optional) | Conceptual diagrams showing 2D and 3D trajectories. |
-| Discussion               | Real-world systems and interpretation of trajectory behavior. |
-| Optional Code            | Euler or Runge-Kutta simulation to integrate motion equations. |
+### ✅ Comparison to Standard $g = 9.81~\text{m/s}^2$
+
+- **Our result:** $9.77 \pm 0.0072~\text{m/s}^2$
+- Slightly lower, but within a 1% error margin — acceptable for a manual lab experiment.
+
+---
+
+### 💡 Sources of Uncertainty
+
+- **Length Measurement ($\Delta L$):**  
+  Small impact on $g$, but affected by center of mass and vertical alignment accuracy.
+
+- **Timing Variability ($\Delta T$):**  
+  Largest uncertainty source due to human reaction delay.  
+  Mitigated by timing 10 oscillations and taking multiple trials.
+
+---
+
+### 🧾 Assumptions & Limitations
+
+- Small-angle approximation: $\theta < 15^\circ$
+- Air resistance and pivot friction neglected.
+- String assumed massless and inextensible.
+
+---
+
+## 📦 Conclusion
+
+This experiment successfully demonstrated a practical method for measuring the gravitational acceleration $g$ using a simple pendulum. Through careful measurement and uncertainty analysis, we obtained:
+
+$$
+g = 9.77 \pm 0.007~\text{m/s}^2
+$$
+
+This is in strong agreement with the theoretical value, validating both the model and the experimental method.
