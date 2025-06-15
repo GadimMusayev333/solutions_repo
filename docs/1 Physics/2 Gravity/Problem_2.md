@@ -42,18 +42,18 @@ v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \cdot v_1
 **Meaning**: The velocity required to escape the Sun’s gravitational field, starting from a planet’s orbital path.
 
 **Formula (approximate)**:  
-\[
+$$\[
 v_3 = \sqrt{v_{\text{esc,Sun}}^2 + v_{\text{orb}}^2}
-\]
+\]$$
 
 Where:
 
-- \[
+$$- \[
 v_{\text{orb}} = \sqrt{\frac{GM_{\odot}}{r}}
-\]
-- \[
+\]$$
+$$- \[
 v_{\text{esc,Sun}} = \sqrt{\frac{2GM_{\odot}}{r}}
-\]
+\]$$
 
 ---
 
