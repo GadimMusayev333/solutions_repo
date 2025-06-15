@@ -123,8 +123,7 @@ $$
 
 Now reduce the system to unknown voltages $V_1$ and $V_3$:
 
-$$
-\begin{bmatrix}
+$$\begin{bmatrix}
 2 & -1 \\
 -1 & 2
 \end{bmatrix}
@@ -136,22 +135,17 @@ V_3
 \begin{bmatrix}
 1 \\
 0
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 #### 4. Solve the System
 
 From the second equation:
 
-$$
-- V_1 + 2V_3 = 0 \Rightarrow V_1 = 2V_3
-$$
+$$- V_1 + 2V_3 = 0 \Rightarrow V_1 = 2V_3$$
 
 Substitute into the first equation:
 
-$$
-2(2V_3) - V_3 = 1 \Rightarrow 4V_3 - V_3 = 1 \Rightarrow 3V_3 = 1 \Rightarrow V_3 = \frac{1}{3}
-$$
+$$2(2V_3) - V_3 = 1 \Rightarrow 4V_3 - V_3 = 1 \Rightarrow 3V_3 = 1 \Rightarrow V_3 = \frac{1}{3}$$
 
 Then:
 
