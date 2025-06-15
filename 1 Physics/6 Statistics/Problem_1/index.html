@@ -172,6 +172,105 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="motivation">🎯 Motivation</h1>
+<p>The <strong>Central Limit Theorem (CLT)</strong> is one of the most important results in statistics. It states that the distribution of sample means tends to follow a <strong>normal distribution</strong> as the <strong>sample size increases</strong>, regardless of the original population's distribution, provided the population has a <strong>finite variance</strong>.</p>
+<p>Understanding the CLT is essential because it justifies why the normal distribution appears so frequently in statistics and science. It enables the use of <strong>confidence intervals</strong>, <strong>hypothesis testing</strong>, and many <strong>modeling techniques</strong>.</p>
+<p>Simulations offer an intuitive way to observe how and why the CLT works.</p>
+<hr/>
+<h1 id="1-simulating-sampling-distributions-conceptually">1️⃣ Simulating Sampling Distributions (Conceptually)</h1>
+<p>We consider the following population distributions:</p>
+<ul>
+<li><strong>Uniform Distribution</strong>: Every value within a range is equally likely.</li>
+<li><strong>Exponential Distribution</strong>: Often models waiting times; it is positively skewed.</li>
+<li><strong>Binomial Distribution</strong>: Discrete distribution modeling a fixed number of trials with success/failure outcomes.</li>
+</ul>
+<p>From each of these populations, we draw many random samples (repeated sampling) of various sizes (e.g., 5, 10, 30, 50). For each sample, we calculate the <strong>sample mean</strong>.</p>
+<p>By collecting the sample means over many repetitions (e.g., 1000 times), we construct the <strong>sampling distribution of the sample mean</strong> for each sample size.</p>
+<hr/>
+<h1 id="2-sampling-and-visualization-conceptual-description">2️⃣ Sampling and Visualization (Conceptual Description)</h1>
+<p><strong>Sample Sizes Considered:</strong>
+- Small: 5, 10<br/>
+- Moderate: 30<br/>
+- Large: 50  </p>
+<h3 id="conceptual-observations">Conceptual Observations:</h3>
+<p>For each population distribution, we examine how the histogram of sample means behaves:</p>
+<ul>
+<li>With <strong>small sample sizes</strong>, the sampling distribution may resemble the <strong>original population</strong>'s shape.</li>
+<li>As the <strong>sample size increases</strong>, the sampling distribution of the sample mean becomes more <strong>bell-shaped</strong> and <strong>symmetrical</strong>, approaching a <strong>normal distribution</strong>.</li>
+</ul>
+<hr/>
+<h3 id="for-each-distribution">For Each Distribution:</h3>
+<h4 id="a-uniform-distribution">A. Uniform Distribution</h4>
+<ul>
+<li><strong>Original shape</strong>: flat (equal probability across range).</li>
+<li>As sample size increases:</li>
+<li>Sampling distribution becomes <strong>smoother</strong>.</li>
+<li>Rapid <strong>convergence to a normal shape</strong>.</li>
+</ul>
+<h4 id="b-exponential-distribution">B. Exponential Distribution</h4>
+<ul>
+<li><strong>Original shape</strong>: highly <strong>right-skewed</strong>.</li>
+<li>Sampling distribution:</li>
+<li>Initially retains skewness for small samples.</li>
+<li>Gradually becomes <strong>symmetric and bell-shaped</strong> for larger samples.</li>
+<li>Converges <strong>more slowly</strong> than the uniform case.</li>
+</ul>
+<h4 id="c-binomial-distribution">C. Binomial Distribution</h4>
+<ul>
+<li><strong>Original shape</strong>: discrete and <strong>symmetric if</strong> <span class="arithmatex">\(p = 0.5\)</span>.</li>
+<li>As sample size increases:</li>
+<li>Sampling distribution becomes <strong>more continuous</strong>.</li>
+<li>Converges to a <strong>normal shape</strong> relatively quickly.</li>
+</ul>
+<hr/>
+<h1 id="3-parameter-exploration">3️⃣ Parameter Exploration</h1>
+<h3 id="a-effect-of-original-distribution">A. Effect of Original Distribution</h3>
+<ul>
+<li>The more <strong>skewed or non-normal</strong> the population distribution is, the <strong>slower</strong> the convergence to normality.</li>
+<li>Uniform and binomial (with <span class="arithmatex">\(p = 0.5\)</span>) converge quickly.</li>
+<li>Exponential, being skewed, requires <strong>larger samples</strong> to appear normal.</li>
+</ul>
+<h3 id="b-effect-of-sample-size">B. Effect of Sample Size</h3>
+<ul>
+<li><strong>Larger sample sizes</strong> lead to:</li>
+<li><strong>Narrower</strong> sampling distributions.</li>
+<li><strong>Closer approximation</strong> to the normal distribution.</li>
+</ul>
+<p>According to CLT:</p>
+<div class="arithmatex">\[
+\text{Standard deviation of the sample mean} = \frac{\sigma}{\sqrt{n}}
+\]</div>
+<p>Where <span class="arithmatex">\(\sigma\)</span> is the <strong>population standard deviation</strong>, and <span class="arithmatex">\(n\)</span> is the <strong>sample size</strong>.</p>
+<h3 id="c-effect-of-population-variance">C. Effect of Population Variance</h3>
+<ul>
+<li>Populations with <strong>larger variance</strong> produce sampling distributions that are <strong>more spread out</strong>.</li>
+<li>However, the <strong>square root rule</strong> ensures that as sample size increases, the spread still <strong>decreases</strong>.</li>
+</ul>
+<hr/>
+<h1 id="4-practical-applications">4️⃣ Practical Applications</h1>
+<h3 id="a-estimating-population-parameters">A. Estimating Population Parameters</h3>
+<p>Even if the population is <strong>not normally distributed</strong>, we can confidently estimate the <strong>population mean</strong> using sample data due to CLT.</p>
+<h3 id="b-quality-control-in-manufacturing">B. Quality Control in Manufacturing</h3>
+<p>Companies use sample means of product measurements (e.g., weight, size, voltage) to monitor production.<br/>
+CLT allows the use of <strong>control charts</strong> based on <strong>normal distribution</strong>.</p>
+<h3 id="c-predicting-outcomes-in-finance">C. Predicting Outcomes in Finance</h3>
+<p>In portfolio theory, the <strong>average return</strong> over time is assumed to follow a <strong>normal distribution</strong>, enabling <strong>risk prediction</strong> and <strong>option pricing</strong>.</p>
+<h3 id="d-medical-and-social-sciences">D. Medical and Social Sciences</h3>
+<p>CLT justifies using <strong>t-tests</strong> and <strong>confidence intervals</strong> in <strong>survey analysis</strong> and <strong>experimental research</strong>.</p>
+<hr/>
+<h1 id="conclusion">✅ Conclusion</h1>
+<p>The Central Limit Theorem shows the remarkable fact that <strong>sample means</strong> will follow a <strong>normal distribution</strong> as <strong>sample size increases</strong>, regardless of how the underlying data is distributed.</p>
+<p>From a theoretical and conceptual point of view:</p>
+<ul>
+<li><strong>Uniform</strong> and <strong>binomial</strong> populations show <strong>quick convergence</strong> to normality.</li>
+<li><strong>Skewed distributions</strong> (like exponential) converge more <strong>slowly</strong> but still follow the CLT.</li>
+<li><strong>Larger sample sizes</strong> reduce variability and improve normal approximation.</li>
+</ul>
+<p>The CLT is a <strong>critical foundation</strong> for many statistical methods used in <strong>science, industry, economics</strong>, and beyond.</p>
+<hr/>
+<p><img alt="alt text" src="../image.png"/></p>
+<h2 id="colab">colab</h2>
+<p><a href="https://colab.research.google.com/drive/1Y8ooW1qSZpVIhneDtzyoEZ23CvHN_rS3?usp=sharing">solution</a></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
