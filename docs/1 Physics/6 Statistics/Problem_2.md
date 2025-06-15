@@ -63,9 +63,7 @@ $$
 - The estimate converges slowly; thousands to millions of points are often required for high accuracy.
 - The method is simple but not computationally efficient compared to analytical formulas.
 - The standard deviation of the estimate decreases proportionally to:
-  $$
-  \frac{1}{\sqrt{n}}
-  $$
+  $$\frac{1}{\sqrt{n}}$$
   where $n$ is the number of points.
 
 ---
@@ -79,13 +77,9 @@ Buffon’s Needle is a classic probability problem:
 - Imagine parallel lines spaced $d$ units apart.
 - Drop a needle of length $l \leq d$ randomly on the plane.
 - The probability that the needle crosses a line is:
-  $$
-  P = \frac{2l}{d\pi}
-  $$
+  $$P = \frac{2l}{d\pi}$$
 - Solving for $\pi$:
-  $$
-  \pi \approx \frac{2l \cdot N}{d \cdot C}
-  $$
+  $$\pi \approx \frac{2l \cdot N}{d \cdot C}$$
 
 Where:
 - $N$: Total number of needle drops
