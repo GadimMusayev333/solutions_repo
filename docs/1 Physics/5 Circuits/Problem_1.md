@@ -175,9 +175,7 @@ $$
 
 So:
 
-$$
-R_{\text{eq}}(A, B) = \frac{V}{I} = \frac{2}{3}\,\Omega
-$$
+$$R_{\text{eq}}(A, B) = \frac{V}{I} = \frac{2}{3}\,\Omega$$
 
 ---
 
