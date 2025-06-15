@@ -150,6 +150,8 @@ Understanding these dynamics enables better mission planning, more efficient fue
 
 ![alt text](image-6.png)
 ![alt text](image-7.png)
+![alt text](image-8.png)
+![alt text](image-9.png)
 
 ### colab
 
