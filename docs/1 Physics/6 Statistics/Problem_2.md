@@ -148,7 +148,7 @@ Count how many times it crosses and use the formula to estimate $\pi$.
 ---
    
 ![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](image-3.png)
 
 ## colab 
 
