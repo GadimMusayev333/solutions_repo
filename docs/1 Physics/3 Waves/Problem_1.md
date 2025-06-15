@@ -79,3 +79,13 @@ This pattern stays **steady in space** (assuming time is fixed), and it **change
 - The shape of the pattern depends on the **number and placement of sources**.
 
 
+---
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+
+## colab 
+
+[solution](https://colab.research.google.com/drive/1Y8ooW1qSZpVIhneDtzyoEZ23CvHN_rS3?usp=sharing)
