@@ -41,8 +41,7 @@ Given:
 
 Inject 1 A current at node $a$, extract 1 A at node $b$:
 
-$$
-\vec{I} =
+$$\vec{I} =
 \begin{bmatrix}
 0 \\
 \vdots \\
@@ -51,8 +50,7 @@ $$
 -1 \text{ at node } b \\
 \vdots \\
 0
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 Set one node's potential (typically node $b$) to zero (ground).
 
