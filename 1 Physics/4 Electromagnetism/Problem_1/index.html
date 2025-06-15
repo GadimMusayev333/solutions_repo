@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Problem 1# Problem 1: Simulating the Effects of the Lorentz Force - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Problem 1# Problem 1: Simulating the Effects of the Lorentz Force";
         var mkdocs_page_input_path = "1 Physics/4 Electromagnetism/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -70,8 +70,42 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">4 Electromagnetism</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1# Problem 1: Simulating the Effects of the Lorentz Force</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#1-exploration-of-applications">1️⃣ Exploration of Applications</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#key-systems-influenced-by-lorentz-force">📌 Key Systems Influenced by Lorentz Force</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#importance-of-fields">📌 Importance of Fields</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-simulating-particle-motion-conceptual-explanation">2️⃣ Simulating Particle Motion (Conceptual Explanation)</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#case-1-uniform-magnetic-field-only">🔁 Case 1: Uniform Magnetic Field Only</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#case-2-uniform-electric-and-magnetic-fields">🔁 Case 2: Uniform Electric and Magnetic Fields</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#case-3-only-electric-field-no-magnetic-field">🔁 Case 3: Only Electric Field (No Magnetic Field)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-parameter-exploration">3️⃣ Parameter Exploration</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-visualization-conceptually">4️⃣ Visualization (Conceptually)</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#2d-and-3d-trajectories-to-show">2D and 3D Trajectories to Show:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#key-concepts">🧭 Key Concepts</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#discussion-real-world-connections">✅ Discussion: Real-World Connections</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#extension-ideas">📌 Extension Ideas</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deliverables-summary-conceptual">📤 Deliverables Summary (Conceptual)</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +197,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">4 Electromagnetism</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Problem 1# Problem 1: Simulating the Effects of the Lorentz Force</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +205,198 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="problem-1-problem-1-simulating-the-effects-of-the-lorentz-force">Problem 1# Problem 1: Simulating the Effects of the Lorentz Force</h1>
+<p>🎯 <strong>Motivation</strong></p>
+<p>The Lorentz force equation:</p>
+<div class="arithmatex">\[
+\vec{F} = q\vec{E} + q\vec{v} \times \vec{B}
+\]</div>
+<p>describes the force experienced by a charged particle in electric (<span class="arithmatex">\(\vec{E}\)</span>) and magnetic (<span class="arithmatex">\(\vec{B}\)</span>) fields. This fundamental law governs the behavior of charged particles in a wide range of physical systems, from particle accelerators and mass spectrometers to astrophysical plasmas and magnetic confinement devices in fusion research.</p>
+<p>Simulating the motion of such particles enables visualization of their dynamic paths and a deeper understanding of phenomena like cyclotron motion, helical trajectories, and drift behavior in combined fields.</p>
+<hr/>
+<h2 id="1-exploration-of-applications">1️⃣ Exploration of Applications</h2>
+<h3 id="key-systems-influenced-by-lorentz-force">📌 Key Systems Influenced by Lorentz Force</h3>
+<ul>
+<li><strong>Particle Accelerators</strong>: Lorentz force bends and accelerates charged particles using magnetic and electric fields.</li>
+<li><strong>Mass Spectrometers</strong>: Use magnetic fields to separate ions by mass-to-charge ratio.</li>
+<li><strong>Plasma Confinement Devices (e.g., Tokamaks)</strong>: Use magnetic fields to confine high-temperature plasma.</li>
+<li><strong>Cathode Ray Tubes (CRTs)</strong>: Deflect electron beams using electric and magnetic fields.</li>
+<li><strong>Auroras and Cosmic Rays</strong>: Charged particles spiral along Earth’s magnetic field lines.</li>
+</ul>
+<h3 id="importance-of-fields">📌 Importance of Fields</h3>
+<ul>
+<li><strong>Electric Field (<span class="arithmatex">\(\vec{E}\)</span>)</strong>: Accelerates particles linearly.</li>
+<li><strong>Magnetic Field (<span class="arithmatex">\(\vec{B}\)</span>)</strong>: Bends the path of particles, causing circular or helical motion.</li>
+</ul>
+<p>The cross product <span class="arithmatex">\(\vec{v} \times \vec{B}\)</span> ensures that the magnetic force is always perpendicular to the particle’s velocity — causing rotation or curvature, not acceleration along the velocity vector.</p>
+<hr/>
+<h2 id="2-simulating-particle-motion-conceptual-explanation">2️⃣ Simulating Particle Motion (Conceptual Explanation)</h2>
+<p>The motion of a particle of mass <span class="arithmatex">\(m\)</span> and charge <span class="arithmatex">\(q\)</span> under Lorentz force is governed by Newton’s second law:</p>
+<div class="arithmatex">\[
+m \frac{d\vec{v}}{dt} = q\vec{E} + q\vec{v} \times \vec{B}
+\]</div>
+<p>This yields coupled differential equations for velocity and position, depending on field configurations.</p>
+<hr/>
+<h3 id="case-1-uniform-magnetic-field-only">🔁 Case 1: Uniform Magnetic Field Only</h3>
+<p>Set <span class="arithmatex">\(\vec{E} = 0\)</span></p>
+<p>Resulting force:</p>
+<div class="arithmatex">\[
+\vec{F} = q\vec{v} \times \vec{B}
+\]</div>
+<ul>
+<li>
+<p>Particle moves in a circular path in a plane perpendicular to <span class="arithmatex">\(\vec{B}\)</span>.</p>
+</li>
+<li>
+<p><strong>Larmor radius</strong> (radius of circular motion):</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+r = \frac{mv_\perp}{qB}
+\]</div>
+<ul>
+<li><strong>Cyclotron frequency</strong> (angular velocity):</li>
+</ul>
+<div class="arithmatex">\[
+\omega = \frac{qB}{m}
+\]</div>
+<hr/>
+<h3 id="case-2-uniform-electric-and-magnetic-fields">🔁 Case 2: Uniform Electric and Magnetic Fields</h3>
+<ul>
+<li>
+<p>If parallel (<span class="arithmatex">\(\vec{E} \parallel \vec{B}\)</span>): Particle accelerates linearly along field lines → <strong>spiral motion</strong>.</p>
+</li>
+<li>
+<p>If crossed (<span class="arithmatex">\(\vec{E} \perp \vec{B}\)</span>):</p>
+</li>
+</ul>
+<p><strong>E × B drift:</strong></p>
+<div class="arithmatex">\[
+\vec{v}_{\text{drift}} = \frac{\vec{E} \times \vec{B}}{B^2}
+\]</div>
+<p>Overall motion: combination of circular motion due to <span class="arithmatex">\(\vec{B}\)</span> and uniform drift due to <span class="arithmatex">\(\vec{E}\)</span>.</p>
+<hr/>
+<h3 id="case-3-only-electric-field-no-magnetic-field">🔁 Case 3: Only Electric Field (No Magnetic Field)</h3>
+<p>Particle undergoes <strong>linear acceleration</strong>:</p>
+<div class="arithmatex">\[
+\vec{a} = \frac{q\vec{E}}{m}
+\]</div>
+<hr/>
+<h2 id="3-parameter-exploration">3️⃣ Parameter Exploration</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electric Field (<span class="arithmatex">\(E\)</span>)</td>
+<td>Increases linear acceleration or drift.</td>
+</tr>
+<tr>
+<td>Magnetic Field (<span class="arithmatex">\(B\)</span>)</td>
+<td>Decreases Larmor radius; increases circular frequency.</td>
+</tr>
+<tr>
+<td>Initial Velocity (<span class="arithmatex">\(v\)</span>)</td>
+<td>Alters pitch of helical path or radius of circle.</td>
+</tr>
+<tr>
+<td>Charge (<span class="arithmatex">\(q\)</span>)</td>
+<td>Reverses direction of force if sign flips; magnitude affects curvature.</td>
+</tr>
+<tr>
+<td>Mass (<span class="arithmatex">\(m\)</span>)</td>
+<td>Heavier particles spiral more slowly and with larger radius.</td>
+</tr>
+</tbody>
+</table>
+<p>These variations can be explored by adjusting initial conditions and field strengths and observing how the motion evolves.</p>
+<hr/>
+<h2 id="4-visualization-conceptually">4️⃣ Visualization (Conceptually)</h2>
+<h3 id="2d-and-3d-trajectories-to-show">2D and 3D Trajectories to Show:</h3>
+<ul>
+<li><strong>Uniform B-field</strong>:</li>
+<li>2D: Circular motion in the <span class="arithmatex">\(x\)</span>–<span class="arithmatex">\(y\)</span> plane.</li>
+<li>
+<p>3D: If initial velocity has a component parallel to <span class="arithmatex">\(\vec{B}\)</span>, the particle moves in a <strong>helical path</strong>.</p>
+</li>
+<li>
+<p><strong>E and B Crossed Fields</strong>:</p>
+</li>
+<li>Path becomes <strong>drifting cycloid</strong> — spiraling while moving sideways.</li>
+</ul>
+<h3 id="key-concepts">🧭 Key Concepts</h3>
+<ul>
+<li><strong>Larmor Radius</strong>: Indicates strength of curvature.</li>
+<li><strong>Helical Pitch</strong>: Determined by parallel velocity.</li>
+<li><strong>Drift Velocity</strong>: Uniform translation of the orbit center.</li>
+</ul>
+<hr/>
+<h2 id="discussion-real-world-connections">✅ Discussion: Real-World Connections</h2>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Lorentz Force Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cyclotron</td>
+<td>Uses magnetic field to keep particles in a circular path while electric field accelerates them.</td>
+</tr>
+<tr>
+<td>Mass Spectrometer</td>
+<td>Separates ions based on the radius of their circular motion in a magnetic field.</td>
+</tr>
+<tr>
+<td>Magnetic Traps</td>
+<td>Confine plasma using magnetic curvature and field gradients.</td>
+</tr>
+<tr>
+<td>Astrophysics</td>
+<td>Explains spiral motion of charged cosmic particles in Earth’s magnetic field.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="extension-ideas">📌 Extension Ideas</h2>
+<ul>
+<li>Add <strong>non-uniform</strong> or <strong>time-varying fields</strong> to model more realistic environments.</li>
+<li>Include <strong>collisions</strong> or <strong>external forces</strong> for plasma simulations.</li>
+<li>Simulate <strong>multiple particles</strong> interacting via Coulomb forces.</li>
+</ul>
+<hr/>
+<h2 id="deliverables-summary-conceptual">📤 Deliverables Summary (Conceptual)</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown Document</td>
+<td>Theoretical foundations, parameter exploration, system analysis.</td>
+</tr>
+<tr>
+<td>Visualizations (Optional)</td>
+<td>Conceptual diagrams showing 2D and 3D trajectories.</td>
+</tr>
+<tr>
+<td>Discussion</td>
+<td>Real-world systems and interpretation of trajectory behavior.</td>
+</tr>
+<tr>
+<td>Optional Code</td>
+<td>Euler or Runge-Kutta simulation to integrate motion equations.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
