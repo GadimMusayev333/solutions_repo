@@ -172,6 +172,140 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="problem-1-equivalent-resistance-using-graph-theory">📐 Problem 1: Equivalent Resistance Using Graph Theory</h1>
+<h2 id="motivation">🎯 Motivation</h2>
+<p>Calculating equivalent resistance is a fundamental task in electrical circuit analysis. Traditionally, this is done using series and parallel rules. However, for complex resistor networks, this becomes inefficient and error-prone.</p>
+<p>Graph theory provides a systematic, scalable, and elegant approach to analyzing resistor networks. By modeling the circuit as a graph—where <strong>nodes represent junctions</strong> and <strong>edges represent resistors</strong> (with weights equal to resistance values)—we can apply tools from <strong>linear algebra</strong> and <strong>matrix theory</strong> to compute the equivalent resistance between any two nodes.</p>
+<p>This approach is not only useful in theoretical physics and electrical engineering but is also essential for the development of <strong>automated circuit solvers</strong>, <strong>network optimization algorithms</strong>, and <strong>simulation software</strong>.</p>
+<hr/>
+<h2 id="theoretical-background">📘 Theoretical Background</h2>
+<h3 id="circuit-as-a-graph">🔗 Circuit as a Graph</h3>
+<ul>
+<li><strong>Nodes</strong> = junctions or connection points  </li>
+<li><strong>Edges</strong> = resistors between nodes  </li>
+<li><strong>Edge Weights</strong> = resistance values or <strong>conductance</strong> (<span class="arithmatex">\(G = \frac{1}{R}\)</span>)</li>
+</ul>
+<p>The circuit is modeled as a <strong>weighted undirected graph</strong>. The electrical properties are encoded into a matrix called the <strong>Laplacian matrix</strong>, derived from Kirchhoff’s laws.</p>
+<hr/>
+<h3 id="laplacian-matrix-method">🧮 Laplacian Matrix Method</h3>
+<p>Given:</p>
+<ul>
+<li><span class="arithmatex">\(R_{ij}\)</span> = resistance between nodes <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span> </li>
+<li><span class="arithmatex">\(G_{ij} = \frac{1}{R_{ij}}\)</span> = conductance  </li>
+</ul>
+<h4 id="step-1-construct-the-laplacian-matrix-l">Step 1: Construct the Laplacian Matrix <span class="arithmatex">\(L\)</span></h4>
+<ul>
+<li><span class="arithmatex">\(L_{ii} = \sum_j G_{ij}\)</span> (sum of conductances at node <span class="arithmatex">\(i\)</span>)  </li>
+<li><span class="arithmatex">\(L_{ij} = -G_{ij}\)</span> (negative of conductance between <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span>)  </li>
+</ul>
+<h4 id="step-2-use-node-potentials">Step 2: Use Node Potentials</h4>
+<p>Inject 1 A current at node <span class="arithmatex">\(a\)</span>, extract 1 A at node <span class="arithmatex">\(b\)</span>:</p>
+<div class="arithmatex">\[
+\vec{I} =
+\begin{bmatrix}
+0 \\
+\vdots \\
++1 \text{ at node } a \\
+\vdots \\
+-1 \text{ at node } b \\
+\vdots \\
+0
+\end{bmatrix}
+\]</div>
+<p>Set one node's potential (typically node <span class="arithmatex">\(b\)</span>) to zero (ground).</p>
+<p>Solve the reduced linear system:</p>
+<div class="arithmatex">\[
+L' \vec{V} = \vec{I}'
+\]</div>
+<p>Then compute the voltage difference <span class="arithmatex">\(V_a - V_b\)</span>.<br/>
+Since current was 1 A, by Ohm’s law:</p>
+<div class="arithmatex">\[
+R_{\text{eq}}(a, b) = V_a - V_b
+\]</div>
+<hr/>
+<h2 id="analytical-example-triangle-circuit">🧪 Analytical Example: Triangle Circuit</h2>
+<h3 id="circuit-description">Circuit Description</h3>
+<p>Three nodes <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, and <span class="arithmatex">\(C\)</span>, all connected with <span class="arithmatex">\(1\,\Omega\)</span> resistors:</p>
+<div class="arithmatex">\[
+R_{AB} = R_{BC} = R_{CA} = 1\,\Omega
+\]</div>
+<p>Goal: Find the <strong>equivalent resistance between A and B</strong>.</p>
+<p>Label:</p>
+<ul>
+<li>Node A → 1  </li>
+<li>Node B → 2  </li>
+<li>Node C → 3</li>
+</ul>
+<hr/>
+<h3 id="step-by-step-solution-no-programming">Step-by-Step Solution (No Programming)</h3>
+<h4 id="1-construct-the-laplacian-matrix">1. Construct the Laplacian Matrix</h4>
+<p>Each node has two connections (each with conductance <span class="arithmatex">\(1\,\text{S}\)</span>):</p>
+<div class="arithmatex">\[
+L =
+\begin{bmatrix}
+2 &amp; -1 &amp; -1 \\
+-1 &amp; 2 &amp; -1 \\
+-1 &amp; -1 &amp; 2
+\end{bmatrix}
+\]</div>
+<h4 id="2-define-current-injection-vector">2. Define Current Injection Vector</h4>
+<p>Inject 1 A into node 1 (A), extract 1 A at node 2 (B):</p>
+<div class="arithmatex">\[
+\vec{I} =
+\begin{bmatrix}
+1 \\
+-1 \\
+0
+\end{bmatrix}
+\]</div>
+<h4 id="3-ground-node-b-set-v_2-0">3. Ground Node B (set <span class="arithmatex">\(V_2 = 0\)</span>)</h4>
+<p>Now reduce the system to unknown voltages <span class="arithmatex">\(V_1\)</span> and <span class="arithmatex">\(V_3\)</span>:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+2 &amp; -1 \\
+-1 &amp; 2
+\end{bmatrix}
+\begin{bmatrix}
+V_1 \\
+V_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\]</div>
+<h4 id="4-solve-the-system">4. Solve the System</h4>
+<p>From the second equation:</p>
+<div class="arithmatex">\[
+- V_1 + 2V_3 = 0 \Rightarrow V_1 = 2V_3
+\]</div>
+<p>Substitute into the first equation:</p>
+<div class="arithmatex">\[
+2(2V_3) - V_3 = 1 \Rightarrow 4V_3 - V_3 = 1 \Rightarrow 3V_3 = 1 \Rightarrow V_3 = \frac{1}{3}
+\]</div>
+<p>Then:</p>
+<div class="arithmatex">\[
+V_1 = \frac{2}{3}
+\]</div>
+<h4 id="5-compute-equivalent-resistance">5. Compute Equivalent Resistance</h4>
+<p>Voltage difference:</p>
+<div class="arithmatex">\[
+V_1 - V_2 = \frac{2}{3} - 0 = \frac{2}{3}\,\text{V}
+\]</div>
+<p>Current:</p>
+<div class="arithmatex">\[
+I = 1\,\text{A}
+\]</div>
+<p>So:</p>
+<div class="arithmatex">\[
+R_{\text{eq}}(A, B) = \frac{V}{I} = \frac{2}{3}\,\Omega
+\]</div>
+<hr/>
+<h2 id="final-answer">✅ Final Answer</h2>
+<div class="arithmatex">\[
+R_{\text{eq}}(A, B) = \frac{2}{3}\,\Omega
+\]</div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
