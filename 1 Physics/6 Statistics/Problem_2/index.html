@@ -172,6 +172,158 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="problem-2-estimating-pi-using-monte-carlo-methods">🎯 Problem 2: Estimating <span class="arithmatex">\(\pi\)</span> Using Monte Carlo Methods</h1>
+<h2 id="motivation">🎯 Motivation</h2>
+<p>The Monte Carlo method uses randomness to solve numerical problems, and one of its most elegant uses is estimating <span class="arithmatex">\(\pi\)</span>. By modeling geometrical probability problems—like throwing darts at a circle or dropping needles on a plane—we can approximate <span class="arithmatex">\(\pi\)</span> without complex formulas.</p>
+<p>This approach:
+- Connects geometry, probability, and numerical analysis.
+- Demonstrates how randomness can yield accurate results.
+- Offers insight into convergence, accuracy, and computational cost.</p>
+<hr/>
+<h2 id="part-1-estimating-pi-using-a-circle">🔵 Part 1: Estimating <span class="arithmatex">\(\pi\)</span> Using a Circle</h2>
+<h3 id="1-theoretical-foundation">1️⃣ Theoretical Foundation</h3>
+<p>Imagine a unit circle (radius = 1) inscribed in a square with sides of length 2 (from <span class="arithmatex">\(-1\)</span> to <span class="arithmatex">\(1\)</span> on both <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> axes).</p>
+<ul>
+<li>The area of the circle is:
+  $$
+  A_{\text{circle}} = \pi r^2 = \pi \cdot 1^2 = \pi
+  $$</li>
+<li>The area of the square is:
+  $$
+  A_{\text{square}} = 2 \cdot 2 = 4
+  $$</li>
+</ul>
+<p>Now, if we randomly throw points into the square, the probability that a point lands inside the circle is:</p>
+<div class="arithmatex">\[
+P = \frac{\text{Area of circle}}{\text{Area of square}} = \frac{\pi}{4}
+\]</div>
+<p>So, rearranging:</p>
+<div class="arithmatex">\[
+\pi \approx 4 \cdot \left( \frac{\text{Number of points inside the circle}}{\text{Total number of points}} \right)
+\]</div>
+<hr/>
+<h3 id="2-simulation-procedure-conceptually">2️⃣ Simulation Procedure (Conceptually)</h3>
+<ul>
+<li>Generate many random points <span class="arithmatex">\((x, y)\)</span> such that <span class="arithmatex">\(x, y \in [-1, 1]\)</span>.</li>
+<li>A point lies inside the circle if:
+  $$
+  x^2 + y^2 \leq 1
+  $$</li>
+<li>Count how many points satisfy this condition.</li>
+<li>Estimate <span class="arithmatex">\(\pi\)</span> using:
+  $$
+  \pi \approx 4 \cdot \frac{\text{Points inside the circle}}{\text{Total points generated}}
+  $$</li>
+</ul>
+<hr/>
+<h3 id="3-visualization-conceptually">3️⃣ Visualization (Conceptually)</h3>
+<ul>
+<li>Plot all generated points on a 2D plane.</li>
+<li>Color points <strong>inside the circle</strong> (satisfying <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span>) in one color (e.g., blue).</li>
+<li>Color points <strong>outside the circle</strong> in another color (e.g., red).</li>
+<li>The plot visually approximates the circle within the square.</li>
+</ul>
+<hr/>
+<h3 id="4-analysis">4️⃣ Analysis</h3>
+<ul>
+<li>Accuracy improves as the number of points increases.</li>
+<li>The estimate converges slowly; thousands to millions of points are often required for high accuracy.</li>
+<li>The method is simple but not computationally efficient compared to analytical formulas.</li>
+<li>The standard deviation of the estimate decreases proportionally to:
+  $$
+  \frac{1}{\sqrt{n}}
+  $$
+  where <span class="arithmatex">\(n\)</span> is the number of points.</li>
+</ul>
+<hr/>
+<h2 id="part-2-estimating-pi-using-buffons-needle">🪡 Part 2: Estimating <span class="arithmatex">\(\pi\)</span> Using Buffon’s Needle</h2>
+<h3 id="1-theoretical-foundation_1">1️⃣ Theoretical Foundation</h3>
+<p>Buffon’s Needle is a classic probability problem:</p>
+<ul>
+<li>Imagine parallel lines spaced <span class="arithmatex">\(d\)</span> units apart.</li>
+<li>Drop a needle of length <span class="arithmatex">\(l \leq d\)</span> randomly on the plane.</li>
+<li>The probability that the needle crosses a line is:
+  $$
+  P = \frac{2l}{d\pi}
+  $$</li>
+<li>Solving for <span class="arithmatex">\(\pi\)</span>:
+  $$
+  \pi \approx \frac{2l \cdot N}{d \cdot C}
+  $$</li>
+</ul>
+<p>Where:
+- <span class="arithmatex">\(N\)</span>: Total number of needle drops
+- <span class="arithmatex">\(C\)</span>: Number of times the needle crosses a line</p>
+<hr/>
+<h3 id="2-simulation-procedure-conceptually_1">2️⃣ Simulation Procedure (Conceptually)</h3>
+<p>Set:
+- Needle length <span class="arithmatex">\(l = 1\)</span>
+- Line spacing <span class="arithmatex">\(d = 2\)</span> (or any <span class="arithmatex">\(d \geq l\)</span>)</p>
+<p>For each needle drop:
+- Randomly select the distance <span class="arithmatex">\(y\)</span> from the center of the needle to the nearest line, uniformly from <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(d/2\)</span>.
+- Randomly select the angle <span class="arithmatex">\(\theta\)</span> that the needle makes with the horizontal, uniformly from <span class="arithmatex">\(0\)</span> to <span class="arithmatex">\(\pi/2\)</span>.
+- The needle crosses a line if:
+  $$
+  y \leq \frac{l}{2} \sin(\theta)
+  $$</p>
+<p>Count how many times it crosses and use the formula to estimate <span class="arithmatex">\(\pi\)</span>.</p>
+<hr/>
+<h3 id="3-visualization-conceptually_1">3️⃣ Visualization (Conceptually)</h3>
+<ul>
+<li>Draw the parallel lines on the plane.</li>
+<li>Show the needles as line segments with random positions and angles.</li>
+<li>Highlight those that cross a line differently from those that don’t.</li>
+</ul>
+<hr/>
+<h3 id="4-analysis_1">4️⃣ Analysis</h3>
+<ul>
+<li>The estimate depends on geometry and angles—adds complexity compared to the circle method.</li>
+<li>Accuracy improves with more trials but convergence is typically slower than the circle method.</li>
+<li>Buffon’s Needle provides a real-world physical model for estimating <span class="arithmatex">\(\pi\)</span>, making it useful for experimental probability.</li>
+</ul>
+<hr/>
+<h2 id="comparison-of-methods">📈 Comparison of Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Circle-Based Monte Carlo</th>
+<th>Buffon’s Needle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simplicity</strong></td>
+<td>Very simple and visual</td>
+<td>Requires angle and distance logic</td>
+</tr>
+<tr>
+<td><strong>Convergence Rate</strong></td>
+<td>Faster</td>
+<td>Slower</td>
+</tr>
+<tr>
+<td><strong>Physical Interpretation</strong></td>
+<td>Geometrical</td>
+<td>Physical experiment</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>High for simulations</td>
+<td>Less efficient</td>
+</tr>
+<tr>
+<td><strong><span class="arithmatex">\(\pi\)</span> Estimation Formula</strong></td>
+<td><span class="arithmatex">\(\pi \approx 4 \cdot \frac{M}{N}\)</span></td>
+<td><span class="arithmatex">\(\pi \approx \frac{2l \cdot N}{d \cdot C}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><img alt="alt text" src="../image-1.png"/>
+<img alt="alt text" src="../image-2.png"/></p>
+<h2 id="colab">colab</h2>
+<p><a href="https://colab.research.google.com/drive/1Y8ooW1qSZpVIhneDtzyoEZ23CvHN_rS3?usp=sharing">solution</a></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
