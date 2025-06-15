@@ -41,14 +41,10 @@ $$
 
 - Generate many random points $(x, y)$ such that $x, y \in [-1, 1]$.
 - A point lies inside the circle if:
-  $$
-  x^2 + y^2 \leq 1
-  $$
+  $$x^2 + y^2 \leq 1$$
 - Count how many points satisfy this condition.
 - Estimate $\pi$ using:
-  $$
-  \pi \approx 4 \cdot \frac{\text{Points inside the circle}}{\text{Total points generated}}
-  $$
+  $$\pi \approx 4 \cdot \frac{\text{Points inside the circle}}{\text{Total points generated}}$$
 
 ---
 
