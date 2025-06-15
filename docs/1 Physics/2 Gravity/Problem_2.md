@@ -82,29 +82,29 @@ v_{\text{esc,Sun}} = \sqrt{\frac{2GM_{\odot}}{r}}
 ### 🌍 Earth
 
 - First Cosmic Velocity:  
-\[
+$$\[
 v_1 = \sqrt{\frac{6.67430 \times 10^{-11} \cdot 5.972 \times 10^{24}}{6.371 \times 10^6}} \approx 7{,}905 \, \text{m/s}
-\]
+\]$$
 
 - Second Cosmic Velocity:  
-\[
+$$\[
 v_2 = \sqrt{2} \cdot v_1 \approx 11{,}180 \, \text{m/s}
-\]
+\]$$
 
 - Orbital Velocity:  
-\[
+$$\[
 v_{\text{orb}} = \sqrt{\frac{6.67430 \times 10^{-11} \cdot 1.989 \times 10^{30}}{1.496 \times 10^{11}}} \approx 29{,}780 \, \text{m/s}
-\]
+\]$$
 
 - Escape Velocity from Sun:  
-\[
+$$\[
 v_{\text{esc,Sun}} = \sqrt{2} \cdot v_{\text{orb}} \approx 42{,}100 \, \text{m/s}
-\]
+\]$$
 
 - Third Cosmic Velocity:  
-\[
+$$\[
 v_3 = \sqrt{(42{,}100)^2 + (29{,}780)^2} \approx 51{,}600 \, \text{m/s}
-\]
+\]$$
 
 ---
 
