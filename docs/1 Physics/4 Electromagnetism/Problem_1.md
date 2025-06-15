@@ -157,3 +157,13 @@ These variations can be explored by adjusting initial conditions and field stren
 | Visualizations (Optional) | Conceptual diagrams showing 2D and 3D trajectories. |
 | Discussion               | Real-world systems and interpretation of trajectory behavior. |
 | Optional Code            | Euler or Runge-Kutta simulation to integrate motion equations. |
+
+---
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+## colab 
+
+[solution](![alt text](image-2.png))
