@@ -183,3 +183,10 @@ It plays a central role in:
 - Determining masses and distances in astronomy  
 - Predicting orbital periods  
 - Understanding both artificial satellite motion and the structure of planetary systems
+
+---
+
+![alt text](image-10.png)
+
+## colab 
+[solution](https://colab.research.google.com/drive/1Y8ooW1qSZpVIhneDtzyoEZ23CvHN_rS3?usp=sharing)
