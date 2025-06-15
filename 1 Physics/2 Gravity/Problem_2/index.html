@@ -172,6 +172,239 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="problem-2-escape-velocities-and-cosmic-velocities">Problem 2: Escape Velocities and Cosmic Velocities</h1>
+<h2 id="motivation">🧠 Motivation</h2>
+<p>The concept of <strong>escape velocity</strong> is central to understanding how spacecraft leave a celestial body’s gravitational influence. Extending this idea, the <strong>first</strong>, <strong>second</strong>, and <strong>third cosmic velocities</strong> define the thresholds required to:</p>
+<ul>
+<li>Orbit a planet,</li>
+<li>Escape a planet’s gravity,</li>
+<li>Escape the entire Solar System.</li>
+</ul>
+<p>These concepts underpin satellite launches, Moon and Mars missions, and future interstellar travel.</p>
+<hr/>
+<h2 id="1-definitions-of-the-cosmic-velocities">🚀 1. Definitions of the Cosmic Velocities</h2>
+<h3 id="first-cosmic-velocity-orbital-velocity">🟢 First Cosmic Velocity — <em>Orbital Velocity</em></h3>
+<p><strong>Meaning</strong>: The minimum horizontal velocity required for a stable circular orbit near the surface of a celestial body.</p>
+<p><strong>Formula</strong>:<br/>
+[
+v_1 = \sqrt{\frac{GM}{R}}
+]</p>
+<hr/>
+<h3 id="second-cosmic-velocity-escape-velocity">🔵 Second Cosmic Velocity — <em>Escape Velocity</em></h3>
+<p><strong>Meaning</strong>: The minimum velocity needed to escape a planet’s gravitational field without further propulsion.</p>
+<p><strong>Formula</strong>:<br/>
+[
+v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \cdot v_1
+]</p>
+<hr/>
+<h3 id="third-cosmic-velocity-solar-system-escape-velocity">🔴 Third Cosmic Velocity — <em>Solar System Escape Velocity</em></h3>
+<p><strong>Meaning</strong>: The velocity required to escape the Sun’s gravitational field, starting from a planet’s orbital path.</p>
+<p><strong>Formula (approximate)</strong>:<br/>
+[
+v_3 = \sqrt{v_{\text{esc,Sun}}^2 + v_{\text{orb}}^2}
+]</p>
+<p>Where:</p>
+<ul>
+<li>
+<div class="arithmatex">\[
+v_{\text{orb}} = \sqrt{\frac{GM_{\odot}}{r}}
+\]</div>
+</li>
+<li>
+<div class="arithmatex">\[
+v_{\text{esc,Sun}} = \sqrt{\frac{2GM_{\odot}}{r}}
+\]</div>
+</li>
+</ul>
+<hr/>
+<h2 id="2-parameters-affecting-these-velocities">📐 2. Parameters Affecting These Velocities</h2>
+<ul>
+<li><span class="arithmatex">\(G = 6.67430 \times 10^{-11} \, \text{m}^3/\text{kg}/\text{s}^2\)</span> — gravitational constant  </li>
+<li><span class="arithmatex">\(M\)</span> = Mass of the planet  </li>
+<li><span class="arithmatex">\(R\)</span> = Radius of the planet  </li>
+<li><span class="arithmatex">\(M_{\odot} = 1.989 \times 10^{30} \, \text{kg}\)</span> — Solar mass  </li>
+<li><span class="arithmatex">\(r\)</span> = Distance from the Sun to the planet  </li>
+</ul>
+<hr/>
+<h2 id="3-manual-calculations-of-cosmic-velocities">🧮 3. Manual Calculations of Cosmic Velocities</h2>
+<h3 id="planetary-data">📊 Planetary Data</h3>
+<table>
+<thead>
+<tr>
+<th>Planet</th>
+<th>Mass (kg)</th>
+<th>Radius (m)</th>
+<th>Orbital Radius (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earth</td>
+<td><span class="arithmatex">\(5.972 \times 10^{24}\)</span></td>
+<td><span class="arithmatex">\(6.371 \times 10^6\)</span></td>
+<td><span class="arithmatex">\(1.496 \times 10^{11}\)</span></td>
+</tr>
+<tr>
+<td>Mars</td>
+<td><span class="arithmatex">\(6.417 \times 10^{23}\)</span></td>
+<td><span class="arithmatex">\(3.390 \times 10^6\)</span></td>
+<td><span class="arithmatex">\(2.279 \times 10^{11}\)</span></td>
+</tr>
+<tr>
+<td>Jupiter</td>
+<td><span class="arithmatex">\(1.898 \times 10^{27}\)</span></td>
+<td><span class="arithmatex">\(6.991 \times 10^7\)</span></td>
+<td><span class="arithmatex">\(7.785 \times 10^{11}\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="earth">🌍 Earth</h3>
+<ul>
+<li>
+<p>First Cosmic Velocity:<br/>
+[
+v_1 = \sqrt{\frac{6.67430 \times 10^{-11} \cdot 5.972 \times 10^{24}}{6.371 \times 10^6}} \approx 7{,}905 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Second Cosmic Velocity:<br/>
+[
+v_2 = \sqrt{2} \cdot v_1 \approx 11{,}180 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Orbital Velocity:<br/>
+[
+v_{\text{orb}} = \sqrt{\frac{6.67430 \times 10^{-11} \cdot 1.989 \times 10^{30}}{1.496 \times 10^{11}}} \approx 29{,}780 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Escape Velocity from Sun:<br/>
+[
+v_{\text{esc,Sun}} = \sqrt{2} \cdot v_{\text{orb}} \approx 42{,}100 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Third Cosmic Velocity:<br/>
+[
+v_3 = \sqrt{(42{,}100)^2 + (29{,}780)^2} \approx 51{,}600 \, \text{m/s}
+]</p>
+</li>
+</ul>
+<hr/>
+<h3 id="mars">🔴 Mars</h3>
+<ul>
+<li>
+<p>First Cosmic Velocity:<br/>
+[
+v_1 = \sqrt{\frac{6.67430 \times 10^{-11} \cdot 6.417 \times 10^{23}}{3.390 \times 10^6}} \approx 3{,}556 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Second Cosmic Velocity:<br/>
+[
+v_2 = \sqrt{2} \cdot v_1 \approx 5{,}028 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Orbital Velocity:<br/>
+[
+v_{\text{orb}} \approx 24{,}130 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Escape Velocity from Sun:<br/>
+[
+v_{\text{esc,Sun}} \approx 34{,}100 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Third Cosmic Velocity:<br/>
+[
+v_3 = \sqrt{(34{,}100)^2 + (24{,}130)^2} \approx 41{,}800 \, \text{m/s}
+]</p>
+</li>
+</ul>
+<hr/>
+<h3 id="jupiter">🟠 Jupiter</h3>
+<ul>
+<li>
+<p>First Cosmic Velocity:<br/>
+[
+v_1 = \sqrt{\frac{6.67430 \times 10^{-11} \cdot 1.898 \times 10^{27}}{6.991 \times 10^7}} \approx 42{,}100 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Second Cosmic Velocity:<br/>
+[
+v_2 = \sqrt{2} \cdot v_1 \approx 59{,}500 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Orbital Velocity:<br/>
+[
+v_{\text{orb}} \approx 13{,}060 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Escape Velocity from Sun:<br/>
+[
+v_{\text{esc,Sun}} \approx 18{,}460 \, \text{m/s}
+]</p>
+</li>
+<li>
+<p>Third Cosmic Velocity:<br/>
+[
+v_3 = \sqrt{(18{,}460)^2 + (13{,}060)^2} \approx 22{,}500 \, \text{m/s}
+]</p>
+</li>
+</ul>
+<hr/>
+<h2 id="4-summary-table">📊 4. Summary Table</h2>
+<table>
+<thead>
+<tr>
+<th>Planet</th>
+<th><span class="arithmatex">\(v_1\)</span> (m/s)</th>
+<th><span class="arithmatex">\(v_2\)</span> (m/s)</th>
+<th><span class="arithmatex">\(v_3\)</span> (m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earth</td>
+<td>7,905</td>
+<td>11,180</td>
+<td>51,600</td>
+</tr>
+<tr>
+<td>Mars</td>
+<td>3,556</td>
+<td>5,028</td>
+<td>41,800</td>
+</tr>
+<tr>
+<td>Jupiter</td>
+<td>42,100</td>
+<td>59,500</td>
+<td>22,500</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="5-importance-in-space-exploration">🌠 5. Importance in Space Exploration</h2>
+<ul>
+<li><strong><span class="arithmatex">\(v_1\)</span> (First Cosmic Velocity)</strong> is used for launching satellites into <strong>Low Earth Orbit (LEO)</strong>.</li>
+<li><strong><span class="arithmatex">\(v_2\)</span> (Second Cosmic Velocity)</strong> is needed to send missions to the <strong>Moon, Mars</strong>, and beyond.</li>
+<li><strong><span class="arithmatex">\(v_3\)</span> (Third Cosmic Velocity)</strong> is required to <strong>leave the Solar System</strong> — this was achieved by the <strong>Voyager and Pioneer probes</strong>.</li>
+</ul>
+<p>Understanding these speeds helps engineers:</p>
+<ul>
+<li>Design rockets with sufficient <strong>thrust</strong> and <strong>fuel efficiency</strong>,</li>
+<li>Choose optimal <strong>launch windows</strong> and <strong>paths</strong>,</li>
+<li>Plan <strong>interplanetary</strong> and <strong>deep space missions</strong>.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
