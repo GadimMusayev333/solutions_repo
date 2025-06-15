@@ -19,14 +19,10 @@ These concepts underpin satellite launches, Moon and Mars missions, and future i
 
 **Meaning**: The minimum horizontal velocity required for a stable circular orbit near the surface of a celestial body.
 
-**Formula**: 
- $$
-
-\[
+**Formula**:
+$$\[
 v_1 = \sqrt{\frac{GM}{R}}
-\]
-
- $$
+\]$$
 
 ---
 
